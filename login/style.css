@@ -1,0 +1,311 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    background-color: #f5f5f5;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  .scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+  
+  /* Base styles with mobile-first approach */
+  body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-height: 100dvh; /* For mobile browsers with dynamic viewport */
+    width: 100%;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .auth-container {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .auth-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    color: #333;
+    margin: 0 0 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+    color: #666;
+    margin: 0 0 1.5rem;
+  }
+  
+  .gmail-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: white;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .gmail-button img {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gmail-button span {
+    color: #3c4043;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .user-info {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  
+  .profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 0.75rem;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-section h3 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #333;
+  }
+  
+  .profile-section p {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0.25rem 0;
+  }
+  
+  .logout-btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  /* Tablet (600px and up) */
+  @media screen and (min-width: 600px) {
+    .auth-container {
+      max-width: 400px;
+      padding: 1.5rem;
+    }
+  
+    .auth-box {
+      padding: 2rem;
+      border-radius: 16px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .gmail-button {
+      padding: 1rem 1.5rem;
+    }
+  
+    .gmail-button img {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .gmail-button span {
+      font-size: 1rem;
+    }
+  
+    .profile-pic {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  
+  /* Desktop (900px and up) */
+  @media screen and (min-width: 900px) {
+    .auth-container {
+      max-width: 450px;
+      padding: 2rem;
+    }
+  
+    .auth-box {
+      padding: 2.5rem;
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .auth-box:hover {
+      transform: translateY(-5px);
+    }
+  }
+  
+  /* Landscape Mode */
+  @media (max-height: 600px) and (orientation: landscape) {
+    body {
+      padding: 0.5rem;
+    }
+  
+    .auth-container {
+      padding: 0.5rem;
+    }
+  
+    .auth-box {
+      padding: 1rem;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  
+  /* Touch Device Optimizations */
+  @media (hover: none) {
+    .auth-box:hover {
+      transform: none;
+    }
+  
+    .gmail-button:active {
+      transform: scale(0.98);
+    }
+  
+    .logout-btn:active {
+      transform: scale(0.98);
+    }
+  }
+  
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .auth-box {
+      border: 2px solid #000;
+    }
+  
+    .gmail-button {
+      border: 2px solid #000;
+    }
+  
+    .logout-btn {
+      border: 2px solid #fff;
+    }
+  }
+  
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+  
+  /* Print Styles */
+  @media print {
+    body {
+      background: none;
+    }
+  
+    .auth-box {
+      box-shadow: none;
+      border: 1px solid #000;
+    }
+  
+    .gmail-button,
+    .logout-btn {
+      display: none;
+    }
+  }
