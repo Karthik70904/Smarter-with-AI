@@ -104,13 +104,58 @@ nav {
     color: rgba(255, 255, 255, 0.8);
 }
 
-.menu-toggle {
+/* .menu-toggle {
     display: none;
     background: none;
     border: none;
     color: var(--white);
     font-size: 1.5rem;
     cursor: pointer;
+} */
+
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Ensure the nav bar is styled properly */
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* For positioning child elements */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the button on smaller screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default */
+        position: absolute;
+        top: 100%; /* Position below the nav bar */
+        left: 0;
+        right: 0;
+        background: var(--primary);
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        z-index: 999; /* Ensure it stays above other elements */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
 }
 
 /* Hero Content */
